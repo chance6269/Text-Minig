@@ -1,0 +1,38 @@
+[240408]
+- wc (v1.0) : 
+	- 워드클라우드 생성, 이미지 저장하는 함수 make_wordcloud() 작성
+
+[240409]
+- wc (v1.1) : 
+	- 추가 : 이미지 파일을 받아서 마스킹 변경하여 워드클라우드 생성, 이미지 저장하는 함수 make_img_wordcloud() 작성
+	- 변경 : 코드 정리, 모듈화 완료, wc 모듈 내에 제약사항 주석 추가.
+	
+- bar_wc (v1.0) :
+	- 막대차트 생성하는 모듈 작성
+	
+[240411]
+- wc (v1.1a) :
+	- Fix : 
+		line 20, 잘못된 변수 할당 수정.
+		- 변경 전 : dic_word = df_word.set_index('word').to_dict()['count']
+		- 변경 후 : dic_word = df.set_index('word').to_dict()['count']
+		
+		line 48, 잘못된 변수 할당 수정.
+		- 변경 전 : dic_word = df_word.set_index('word').to_dict()['count']
+		- 변경 후 : dic_word = df.set_index('word').to_dict()['count']
+		
+- wc (v1.2) :
+	- 변경 : 파일 이름을 인수로 받아서 저장
+		make_wordcloud(df, filename)
+		make_img_wordcloud(df, filename, img_file)
+	- Fix : wc 이후 bar_wc 사용시 워드클라우드 위에 그려지는 버그 수정.
+		
+- bar_wc(v1.2) :
+	- 변경 : 파일 이름을 인수로 받아서 저장
+		bar_wordcount(x_col, y_col, filename)
+		barh_wordcount(x_col, y_col, filename)
+		
+[240412]
+- 수정 :
+	- bar_wc(v1.2a) :
+		- 예외처리하도록 구문 수정
