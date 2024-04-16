@@ -34,9 +34,7 @@ def crawling():
     speeches = []
     speeches_list = []
 
-    speeches_all = []
     k = 0
-
     for president in all_president:
         
         for idn in range(president[0], president[1] + 1):
@@ -48,7 +46,6 @@ def crawling():
                     selected_speeches.append(speech)
                 else:
                     speeches.append(speech)
-                    speeches_all.append(speech)
                     k += 1
             
             if (k > 0 and k % 50 == 0) \
